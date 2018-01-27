@@ -1,0 +1,5 @@
+graph-tool (2.27.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- unknown <janis@andromeda.fritz.box>  Wed, 17 Jan 2018 21:57:20 +0100
