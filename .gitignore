@@ -1,0 +1,32 @@
+# Auto-tools generated
+Makefile
+Makefile.in
+/aclocal.m4
+/autom4te.cache
+/config.log
+/config.h
+/config.h.in
+/config.status
+/configure
+/graph-tool-py3.6-uninstalled.pc
+/graph-tool-py3.6-uninstalled.sh
+/graph-tool-py3.6.pc
+/graph-tool-py3.6.pc.in
+/libtool
+/m4
+# dpkg-buildpackage generated
+/build-aux
+# debian installed
+/debian/.debhelper
+/debian/autoreconf.*
+/debian/debhelper-build-stamp
+/debian/python3-graph-tool
+/debian/python-graph-tool-doc
+/debian/tmp
+# Make files
+src/graph/**/.libs
+src/graph/**/.deps
+src/graph/**/*.lo
+src/graph/**/*.la
+src/graph/**/.dirstamp
+stamp-h1
