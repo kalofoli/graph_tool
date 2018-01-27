@@ -402,13 +402,45 @@ out_degree(typename filt_graph<G, EP, VP>::vertex_descriptor u,
   return n;
 }
 
+namespace detail{
+	template <typename G, typename EP, typename VP>
+	inline __attribute__((always_inline))
+	typename filt_graph<G, EP, VP>::degree_size_type
+	fg_get_degree(typename filt_graph<G, EP, VP>::vertex_descriptor u,
+		const filt_graph<G, EP, VP>& g, std::true_type)
+	{
+		return in_degree(u, g) + out_degree(u, g);
+	}
+
+	template <typename G, typename EP, typename VP>
+	inline __attribute__((always_inline))
+	typename filt_graph<G, EP, VP>::degree_size_type
+	fg_get_degree(typename filt_graph<G, EP, VP>::vertex_descriptor u,
+		const filt_graph<G, EP, VP>& g, std::false_type)
+	{
+		return out_degree(u, g);
+	}
+
+	template <typename G, typename EP, typename VP>
+	inline __attribute__((always_inline))
+	typename filt_graph<G, EP, VP>::degree_size_type
+	fg_get_degree(typename filt_graph<G, EP, VP>::vertex_descriptor u,
+		const filt_graph<G, EP, VP>& g)
+	{
+		typedef typename std::is_convertible
+            <typename boost::graph_traits<G>::directed_category,
+             boost::directed_tag>::type is_directed_tag;
+		return fg_get_degree(u, g, is_directed_tag());
+	}
+}
+
 template <typename G, typename EP, typename VP>
 inline
 typename filt_graph<G, EP, VP>::degree_size_type
 degree(typename filt_graph<G, EP, VP>::vertex_descriptor u,
        const filt_graph<G, EP, VP>& g)
 {
-    return in_degree(u, g) + out_degree(u, g);
+    return detail::fg_get_degree(u, g);
 }
 
 template <typename G, typename EP, typename VP>
