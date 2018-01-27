@@ -321,7 +321,7 @@ def centered_rotation(g, pos, text_pos=True):
 def _convert(attr, val, cmap, pmap_default=False, g=None, k=None):
     try:
         cmap, alpha = cmap
-    except TypeError:
+    except (ValueError, TypeError):
         alpha = None
 
     if attr == vertex_attrs.shape:
