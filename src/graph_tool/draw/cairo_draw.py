@@ -62,8 +62,8 @@ try:
                                                                      default_clrs)
     is_draw_inline = 'inline' in matplotlib.get_backend()
     color_converter = matplotlib.colors.ColorConverter()
-except ImportError:
-    msg = "Error importing matplotlib module. Graph drawing will not work."
+except ImportError as e:
+    msg = "Error importing matplotlib module: %s. Graph drawing will not work." % str(e)
     warnings.warn(msg, RuntimeWarning)
     raise
 
