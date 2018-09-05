@@ -2,7 +2,7 @@ Source: graph-tool
 Section: unknown
 Priority: optional
 Maintainer: Janis Kalofolias <kalofoli@ceid.upatras.gr>
-Build-Depends: debhelper (>= 10), dh-python, python-setuptools, python3-setuptools, libboost-iostreams-dev, libboost-python-dev, libboost-graph-dev, libboost-coroutine-dev, libboost-context-dev, libboost-regex-dev, libboost-thread-dev, libcgal-dev, libgmp-dev, python-cairo-dev, libsparsehash-dev, libcairomm-1.0-dev
+Build-Depends: debhelper (>= 10), dh-python, python-setuptools, python3-setuptools, libboost-iostreams-dev, libboost-python-dev, libboost-graph-dev, libboost-coroutine-dev, libboost-context-dev, libboost-regex-dev, libboost-thread-dev, libcgal-dev, libgmp-dev, libsparsehash-dev, libcairomm-1.0-dev, python3-cairo-dev
 Standards-Version: 4.1.2
 Homepage: <insert the upstream URL, if relevant>
 X-Python-Version: >= 2.6
